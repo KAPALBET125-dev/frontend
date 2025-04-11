@@ -1,11 +1,11 @@
 
-import Navbar from '../components/Navbar';
+import '../styles/globals.css'
+import AdminLayout from '../components/AdminLayout'
 
 export default function App({ Component, pageProps }) {
   return (
-    <>
-      <Navbar />
+    <AdminLayout>
       <Component {...pageProps} />
-    </>
+    </AdminLayout>
   );
 }

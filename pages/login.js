@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 
 export default function Login() {
@@ -14,7 +13,6 @@ export default function Login() {
         body: new URLSearchParams({ username, password }),
       });
       const data = await res.json();
-      console.log(data);
       if (data.access_token) {
         localStorage.setItem('token', data.access_token);
         alert('Login sukses!');
@@ -22,17 +20,18 @@ export default function Login() {
         alert('Login gagal: ' + JSON.stringify(data));
       }
     } catch (err) {
-      console.error(err);
       alert('Gagal login: ' + err.message);
     }
   }
 
   return (
-    <form onSubmit={handleLogin} style={ padding: 40 }>
-      <h2>Login Admin</h2>
-      <input placeholder="username" onChange={e => setUsername(e.target.value)} /><br/>
-      <input placeholder="password" type="password" onChange={e => setPassword(e.target.value)} /><br/>
-      <button type="submit">Login</button>
-    </form>
+    <div className="max-w-md mx-auto">
+      <h2 className="text-xl font-bold mb-4">Login Admin</h2>
+      <form onSubmit={handleLogin} className="space-y-4">
+        <input className="w-full border px-4 py-2" placeholder="Username" onChange={e => setUsername(e.target.value)} />
+        <input className="w-full border px-4 py-2" placeholder="Password" type="password" onChange={e => setPassword(e.target.value)} />
+        <button className="bg-blue-600 text-white px-4 py-2 rounded" type="submit">Login</button>
+      </form>
+    </div>
   );
 }
