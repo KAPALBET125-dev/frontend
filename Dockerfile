@@ -1,5 +1,12 @@
+
 FROM node:18-alpine
+
 WORKDIR /app
-COPY ./ /app
+
+COPY . .
+
 RUN npm install
-CMD ["npm", "run", "dev"]
+
+RUN npm run build
+
+CMD ["npm", "run", "start"]
