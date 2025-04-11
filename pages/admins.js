@@ -8,7 +8,7 @@ export default function Admins() {
 
   useEffect(() => {
     const token = localStorage.getItem('token');
-    fetch('https://telegram-userbot-api.ondigitalocean.app/admins', {
+    fetch('https://backend-tgfw-7cw4t.ondigitalocean.app/admins', {
       headers: { Authorization: 'Bearer ' + token }
     })
     .then(res => res.json())
@@ -18,7 +18,7 @@ export default function Admins() {
   async function handleAdd(e) {
     e.preventDefault();
     const token = localStorage.getItem('token');
-    const res = await fetch('https://telegram-userbot-api.ondigitalocean.app/admins', {
+    const res = await fetch('https://backend-tgfw-7cw4t.ondigitalocean.app/admins', {
       method: 'POST',
       headers: {
         Authorization: 'Bearer ' + token,

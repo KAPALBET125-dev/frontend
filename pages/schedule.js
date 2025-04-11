@@ -8,7 +8,7 @@ export default function Schedule() {
 
   useEffect(() => {
     const token = localStorage.getItem('token');
-    fetch('https://telegram-userbot-api.ondigitalocean.app/schedules', {
+    fetch('https://backend-tgfw-7cw4t.ondigitalocean.app/schedules', {
       headers: { Authorization: 'Bearer ' + token }
     })
     .then(res => res.json())
@@ -18,7 +18,7 @@ export default function Schedule() {
   async function handleAdd(e) {
     e.preventDefault();
     const token = localStorage.getItem('token');
-    const res = await fetch('https://telegram-userbot-api.ondigitalocean.app/schedules', {
+    const res = await fetch('https://backend-tgfw-7cw4t.ondigitalocean.app/schedules', {
       method: 'POST',
       headers: {
         Authorization: 'Bearer ' + token,

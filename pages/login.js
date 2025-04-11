@@ -7,7 +7,7 @@ export default function Login() {
   async function handleLogin(e) {
     e.preventDefault();
     try {
-      const res = await fetch('https://telegram-userbot-api.ondigitalocean.app/login', {
+      const res = await fetch('https://backend-tgfw-7cw4t.ondigitalocean.app/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams({ username, password }),
